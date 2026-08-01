@@ -1,0 +1,825 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --color-gold: #8C7B6A;
+  --color-gold-dark: #5A4D40;
+  --color-gold-light: #B5A595;
+  --color-surface: #FAF9F6;
+  --color-surface-container: #F2F0EB;
+  --color-surface-low: #F7F5F0;
+  --color-surface-high: #EAE6DF;
+  --color-dark: #2D2A26;
+  --color-dark-subtle: #6B665E;
+
+  --shadow-sm: 0 2px 10px rgba(26, 25, 23, 0.02);
+  --shadow-md: 0 8px 24px rgba(26, 25, 23, 0.04);
+  --shadow-lg: 0 16px 40px rgba(26, 25, 23, 0.06);
+  --shadow-xl: 0 24px 50px rgba(26, 25, 23, 0.08);
+  --shadow-2xl: 0 32px 70px rgba(26, 25, 23, 0.10);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base mobile */
+  }
+  @media (min-width: 1024px) {
+    html {
+      font-size: 18px; /* Base desktop */
+    }
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-surface);
+    color: #2D2A26;
+    font-weight: 300;
+    line-height: 1.8 !important;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif) !important;
+    color: #2D2A26;
+    font-weight: 300 !important;
+    letter-spacing: -0.015em !important;
+  }
+
+  /* Heading Scales & Spacing */
+  h1 {
+    font-size: 42px !important;
+    line-height: 1.1 !important;
+  }
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 64px !important;
+    }
+  }
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 88px !important;
+    }
+  }
+
+  h2 {
+    font-size: 34px !important;
+    line-height: 1.15 !important;
+  }
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: 58px !important;
+    }
+  }
+
+  h3 {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+  }
+  @media (min-width: 1024px) {
+    h3 {
+      font-size: 38px !important;
+    }
+  }
+
+  /* Paragraph Readability & Spacing */
+  p {
+    line-height: 1.8 !important;
+    letter-spacing: 0.015em !important;
+  }
+
+  /* Refine Button Typography globally */
+  button, input[type="submit"], .btn-premium {
+    letter-spacing: 0.22em !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+  }
+
+  /* Dark Sections overrides */
+  .bg-black h1, .bg-black h2, .bg-black h3, .bg-black h4, .bg-black p, .bg-black span, .bg-black a,
+  .bg-\[\#1E1C1A\] h1, .bg-\[\#1E1C1A\] h2, .bg-\[\#1E1C1A\] h3, .bg-\[\#1E1C1A\] h4, .bg-\[\#1E1C1A\] p, .bg-\[\#1E1C1A\] span, .bg-\[\#1E1C1A\] a {
+    color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  /* Secondary text color overrides */
+  p:not(.text-white):not(.text-white\/85):not(.text-\[\#C5A376\]) {
+    color: #6B665E;
+  }
+
+  /* Universal luxury cubic-bezier overrides (.19,1,.22,1) */
+  *, *::before, *::after {
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1) !important;
+  }
+
+  button, a.btn-premium, select, input, textarea, a {
+    transition: transform 800ms cubic-bezier(0.19, 1, 0.22, 1),
+                box-shadow 800ms cubic-bezier(0.19, 1, 0.22, 1),
+                background-color 800ms cubic-bezier(0.19, 1, 0.22, 1),
+                border-color 800ms cubic-bezier(0.19, 1, 0.22, 1),
+                color 800ms cubic-bezier(0.19, 1, 0.22, 1),
+                opacity 800ms cubic-bezier(0.19, 1, 0.22, 1),
+                filter 800ms cubic-bezier(0.19, 1, 0.22, 1),
+                backdrop-filter 800ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+    will-change: transform, box-shadow;
+  }
+
+  /* Focus Outlines for Accessibility (WCAG compliant keyboard focus states) */
+  button:focus-visible, 
+  a:focus-visible, 
+  input:focus-visible, 
+  select:focus-visible, 
+  textarea:focus-visible {
+    outline: 2px solid #C5A376 !important;
+    outline-offset: 4px !important;
+  }
+
+  /* Apple-level premium button micro-feedback (scale 1.02, press scale 0.98) */
+  button:hover, a.btn-premium:hover {
+    transform: translateY(-3px) scale(1.02) translateZ(0) !important;
+    box-shadow: 0 15px 30px -5px rgba(197, 163, 118, 0.25), 0 0 18px rgba(197, 163, 118, 0.15) !important;
+    filter: brightness(1.03) !important;
+  }
+
+  button:active, a.btn-premium:active {
+    transform: translateY(-0.5px) scale(0.98) translateZ(0) !important;
+    box-shadow: 0 5px 12px -3px rgba(197, 163, 118, 0.15) !important;
+    filter: brightness(0.97) !important;
+  }
+
+  /* Smooth scroll selection */
+  ::selection {
+    background-color: rgba(197, 163, 118, 0.3);
+    color: #1A1917;
+  }
+}
+
+/* Editorial Section Label overrides */
+.reveal-section span.text-xs,
+.reveal-section p.tracking-wide,
+.reveal-subheading,
+span.text-\[11px\].tracking-\[0\.3em\],
+span.text-\[11px\].tracking-\[0\.4em\] {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.35em !important;
+  color: #8C7B6A !important;
+  text-transform: uppercase !important;
+}
+@media (min-width: 768px) {
+  .reveal-section span.text-xs,
+  .reveal-section p.tracking-wide,
+  .reveal-subheading,
+  span.text-\[11px\].tracking-\[0\.3em\],
+  span.text-\[11px\].tracking-\[0\.4em\] {
+    font-size: 11px !important;
+  }
+}
+
+/* Custom Letter spacing tracking utilities */
+button, a.btn-premium, select {
+  letter-spacing: 0.20em !important;
+}
+nav a, .tracking-luxury-nav {
+  letter-spacing: 0.18em !important;
+}
+
+/* Custom Cursor */
+.cursor-none {
+  cursor: none !important;
+}
+
+/* Cinematic Intersection Observer Scroll Reveals (GPU-Accelerated) */
+.reveal-section .reveal-subheading {
+  opacity: 0;
+  transform: translateY(24px) translateZ(0);
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 700ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.reveal-section .reveal-heading {
+  opacity: 0;
+  transform: translateY(24px) translateZ(0);
+  transition: opacity 750ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 750ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.reveal-section .reveal-content {
+  opacity: 0;
+  transform: translateY(24px) translateZ(0);
+  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 800ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.reveal-section .reveal-cards {
+  opacity: 0;
+  transform: translateY(24px) translateZ(0);
+  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 800ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.reveal-section .reveal-buttons {
+  opacity: 0;
+  transform: translateY(24px) translateZ(0);
+  transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 800ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Reduced animation distances on mobile devices */
+@media (max-width: 768px) {
+  .reveal-section .reveal-subheading,
+  .reveal-section .reveal-heading,
+  .reveal-section .reveal-content,
+  .reveal-section .reveal-cards,
+  .reveal-section .reveal-buttons {
+    transform: translateY(12px) translateZ(0) !important;
+  }
+}
+
+/* Cinematic stagger delays */
+.reveal-section.is-visible .reveal-subheading {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 0ms !important;
+}
+.reveal-section.is-visible .reveal-heading {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 100ms !important;
+}
+.reveal-section.is-visible .reveal-content {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 200ms !important;
+}
+.reveal-section.is-visible .reveal-cards {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 300ms !important;
+}
+.reveal-section.is-visible .reveal-buttons {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 400ms !important;
+}
+
+/* SPECIFIC SECTION ANIMATIONS */
+
+/* 1. Hero: Fade + Scale */
+#hero {
+  opacity: 0;
+  transform: scale(0.98) translateZ(0);
+  transition: opacity 1200ms cubic-bezier(0.19, 1, 0.22, 1),
+              transform 1200ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+#hero.is-visible {
+  opacity: 1;
+  transform: scale(1) translateZ(0);
+}
+
+/* 2. Properties: Cards stagger upward */
+#properties.reveal-section .reveal-cards > div {
+  opacity: 0;
+  transform: translateY(40px) translateZ(0);
+  transition: opacity 900ms cubic-bezier(0.19, 1, 0.22, 1),
+              transform 900ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+#properties.reveal-section.is-visible .reveal-cards > div {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+}
+
+/* 3. Services: Left/right slide */
+#services.reveal-section .reveal-cards > div:nth-child(odd) {
+  opacity: 0;
+  transform: translateX(-35px) translateZ(0);
+  transition: opacity 1000ms cubic-bezier(0.19, 1, 0.22, 1),
+              transform 1000ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+#services.reveal-section .reveal-cards > div:nth-child(even) {
+  opacity: 0;
+  transform: translateX(35px) translateZ(0);
+  transition: opacity 1000ms cubic-bezier(0.19, 1, 0.22, 1),
+              transform 1000ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+#services.reveal-section.is-visible .reveal-cards > div {
+  opacity: 1;
+  transform: translateX(0) translateZ(0);
+}
+@media (max-width: 768px) {
+  #services.reveal-section .reveal-cards > div:nth-child(odd) {
+    transform: translateX(-15px) translateZ(0) !important;
+  }
+  #services.reveal-section .reveal-cards > div:nth-child(even) {
+    transform: translateX(15px) translateZ(0) !important;
+  }
+}
+
+/* 4. Team: Elegant fade */
+#advisors.reveal-section .reveal-cards > div {
+  opacity: 0;
+  transform: none !important;
+  transition: opacity 1200ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+#advisors.reveal-section.is-visible .reveal-cards > div {
+  opacity: 1;
+}
+
+/* 5. Journal: Soft zoom */
+#journal.reveal-section .reveal-cards > div {
+  opacity: 0;
+  transform: scale(0.97) translateZ(0);
+  transition: opacity 1000ms cubic-bezier(0.19, 1, 0.22, 1),
+              transform 1000ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+#journal.reveal-section.is-visible .reveal-cards > div {
+  opacity: 1;
+  transform: scale(1) translateZ(0);
+}
+
+/* 6. Contact: Fade upward */
+#contact.reveal-section {
+  opacity: 0;
+  transform: translateY(30px) translateZ(0);
+  transition: opacity 1100ms cubic-bezier(0.19, 1, 0.22, 1),
+              transform 1100ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+#contact.reveal-section.is-visible {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+}
+
+/* Timeline connecting line grows with custom opacity */
+#process .absolute.top-\[58px\] {
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0.15;
+  transition: opacity 800ms ease, transform 1800ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+#process.is-visible .absolute.top-\[58px\] {
+  transform: scaleX(1);
+  opacity: 0.45;
+}
+
+/* Cards Stagger animation delays (0.1s gap) */
+.reveal-cards > div:nth-child(1), .reveal-cards > a:nth-child(1) { transition-delay: 300ms !important; }
+.reveal-cards > div:nth-child(2), .reveal-cards > a:nth-child(2) { transition-delay: 400ms !important; }
+.reveal-cards > div:nth-child(3), .reveal-cards > a:nth-child(3) { transition-delay: 500ms !important; }
+.reveal-cards > div:nth-child(4), .reveal-cards > a:nth-child(4) { transition-delay: 600ms !important; }
+.reveal-cards > div:nth-child(5), .reveal-cards > a:nth-child(5) { transition-delay: 700ms !important; }
+.reveal-cards > div:nth-child(6), .reveal-cards > a:nth-child(6) { transition-delay: 800ms !important; }
+
+/* Luxury Image Reveal (scale 0.96 -> 1, opacity 0 -> 1, blur) */
+.reveal-section img {
+  opacity: 0 !important;
+  transform: scale(0.96) translateZ(0) !important;
+  filter: blur(4px) !important;
+  transition: opacity 900ms cubic-bezier(0.19, 1, 0.22, 1),
+              transform 900ms cubic-bezier(0.19, 1, 0.22, 1),
+              filter 900ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+  will-change: opacity, transform, filter;
+}
+
+.reveal-section.is-visible img {
+  opacity: 1 !important;
+  transform: scale(1) translateZ(0) !important;
+  filter: blur(0px) !important;
+  transition-delay: 300ms !important;
+}
+
+/* Card hover lifts & transitions (500ms duration) */
+.grid > div, .grid > a, .timeline-grid > div {
+  transition: transform 500ms cubic-bezier(0.19, 1, 0.22, 1),
+              box-shadow 500ms cubic-bezier(0.19, 1, 0.22, 1),
+              border-color 500ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+.grid > div:hover, .grid > a:hover {
+  transform: translateY(-8px) translateZ(0) !important;
+  box-shadow: 0 30px 60px -15px rgba(26,25,23,0.12) !important;
+}
+
+/* Property cards specific hover animations */
+#properties .grid > div:hover {
+  border-color: rgba(197, 163, 118, 0.3) !important;
+}
+#properties .grid > div:hover img {
+  transform: scale(1.03) translateZ(0) !important;
+}
+#properties .grid > div:hover .px-1.pb-2 {
+  transform: translateY(-2px) translateZ(0);
+  transition: transform 500ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+#properties .grid > div:hover svg.lucide-arrow-up-right {
+  transform: translate(2px, -2px) rotate(45deg) translateZ(0) !important;
+}
+#properties .grid > div:hover button {
+  transform: translateY(-2px) translateZ(0) !important;
+  box-shadow: 0 8px 20px rgba(197, 163, 118, 0.2) !important;
+}
+#properties .grid > div:hover span.absolute.top-5.left-5 span {
+  filter: brightness(1.1) !important;
+}
+
+/* Property card typography */
+.reveal-cards .font-serif.text-xl, 
+.reveal-cards h3.font-serif {
+  font-size: 1.35rem !important;
+  font-weight: 300 !important;
+  color: #2D2A26 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.3 !important;
+}
+@media (min-width: 768px) {
+  .reveal-cards .font-serif.text-xl, 
+  .reveal-cards h3.font-serif {
+    font-size: 1.55rem !important;
+  }
+}
+
+.reveal-cards p.text-\[10px\].tracking-\[0\.2em\] {
+  color: #6B665E !important;
+  font-weight: 400 !important;
+  font-size: 9px !important;
+  letter-spacing: 0.25em !important;
+}
+
+.reveal-cards .font-serif.text-2xl {
+  font-size: 1.45rem !important;
+  color: #8C7B6A !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.05em !important;
+}
+
+.reveal-cards .flex.items-center.gap-3.text-\[10px\] {
+  font-size: 8.5px !important;
+  color: rgba(45,42,38,0.55) !important;
+}
+
+/* Search icon hover spin */
+nav button:hover svg.lucide-search {
+  transform: rotate(15deg) scale(1.1) translateZ(0) !important;
+}
+
+/* Navbar CTA button hover glow */
+nav button.bg-gradient-to-r:hover,
+nav button.bg-white:hover {
+  box-shadow: 0 0 25px rgba(197, 163, 118, 0.35) !important;
+}
+
+/* Service Cards custom hover details */
+#services .grid > div:hover .w-12.h-12 {
+  transform: translateY(-4px) translateZ(0) !important;
+  box-shadow: 0 0 20px rgba(197, 163, 118, 0.3) !important;
+}
+
+/* Timeline items scale */
+#process .reveal-cards > div:hover .w-12.h-12 {
+  transform: scale(1.08) translateZ(0) !important;
+}
+
+/* Advisor Cards premium details staggers */
+#advisors .reveal-cards > div img {
+  transition: opacity 800ms cubic-bezier(0.19, 1, 0.22, 1),
+              transform 800ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+#advisors .reveal-cards > div h3 {
+  opacity: 0;
+  transform: translateY(8px) translateZ(0);
+  transition: opacity 800ms cubic-bezier(0.19, 1, 0.22, 1),
+              transform 800ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+#advisors .reveal-cards > div p {
+  opacity: 0;
+  transform: translateY(8px) translateZ(0);
+  transition: opacity 800ms cubic-bezier(0.19, 1, 0.22, 1),
+              transform 800ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+
+#advisors.is-visible .reveal-cards > div h3 {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 500ms !important;
+}
+#advisors.is-visible .reveal-cards > div p.tracking-\[0\.2em\] {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 650ms !important;
+}
+#advisors.is-visible .reveal-cards > div p.text-white\/50,
+#advisors.is-visible .reveal-cards > div p.text-white\/70,
+#advisors.is-visible .reveal-cards > div .flex {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 800ms !important;
+}
+
+#advisors .grid > div:hover img {
+  transform: scale(1.03) translateZ(0) !important;
+  filter: brightness(1.03) contrast(1.01) !important;
+}
+#advisors .grid > div:hover h3 {
+  color: #C5A376 !important;
+}
+
+/* Journal Cards Magazine style reveal */
+#journal .grid > div:hover img {
+  transform: scale(1.03) translateZ(0) !important;
+}
+#journal .grid > div:hover svg.lucide-arrow-right {
+  transform: translateX(6px) translateZ(0) !important;
+}
+
+/* Contact form fields focus styling */
+#contact input, #contact select, #contact textarea {
+  transition: border-color 400ms cubic-bezier(0.19, 1, 0.22, 1),
+              box-shadow 400ms cubic-bezier(0.19, 1, 0.22, 1),
+              transform 400ms cubic-bezier(0.19, 1, 0.22, 1),
+              background-color 400ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+#contact input:focus, #contact select:focus, #contact textarea:focus {
+  border-color: #C5A376 !important;
+  box-shadow: 0 0 20px rgba(197, 163, 118, 0.15), inset 0 0 8px rgba(197, 163, 118, 0.05) !important;
+  background-color: #ffffff !important;
+  transform: translateY(-1px) translateZ(0);
+}
+
+#contact form > div, #contact form select, #contact form input, #contact form textarea {
+  opacity: 0;
+  transform: translateY(10px) translateZ(0);
+  transition: opacity 800ms cubic-bezier(0.19, 1, 0.22, 1),
+              transform 800ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+
+#contact.is-visible form > div:nth-child(1),
+#contact.is-visible form select:nth-child(1),
+#contact.is-visible form input:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 400ms !important;
+}
+#contact.is-visible form > div:nth-child(2),
+#contact.is-visible form select:nth-child(2),
+#contact.is-visible form input:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 500ms !important;
+}
+#contact.is-visible form > div:nth-child(3),
+#contact.is-visible form select:nth-child(3),
+#contact.is-visible form input:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 600ms !important;
+}
+#contact.is-visible form > div:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 700ms !important;
+}
+#contact.is-visible form textarea {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 800ms !important;
+}
+#contact.is-visible form button {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 900ms !important;
+}
+
+#contact form button {
+  position: relative;
+}
+#contact form button::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(to right, #C5A376, #B59265);
+  filter: blur(10px);
+  opacity: 0.15;
+  z-index: -1;
+  transition: opacity 500ms cubic-bezier(0.19, 1, 0.22, 1);
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+#contact form button:hover::before {
+  opacity: 0.45;
+}
+
+/* Footer elements reveals */
+footer.reveal-section .relative.grid > div {
+  opacity: 0;
+  transform: translateY(20px) translateZ(0);
+  transition: opacity 1000ms cubic-bezier(0.19, 1, 0.22, 1),
+              transform 1000ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+footer.reveal-section.is-visible .relative.grid > div:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 100ms !important;
+}
+footer.reveal-section.is-visible .relative.grid > div:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 250ms !important;
+}
+footer.reveal-section.is-visible .relative.grid > div:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 400ms !important;
+}
+footer.reveal-section.is-visible .relative.grid > div:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 550ms !important;
+}
+
+/* Footer newsletter reveal */
+footer.reveal-section .border-t.pt-16 {
+  opacity: 0;
+  transform: translateY(30px) translateZ(0);
+  transition: opacity 1200ms cubic-bezier(0.19, 1, 0.22, 1),
+              transform 1200ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+footer.reveal-section.is-visible .border-t.pt-16 {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+  transition-delay: 700ms !important;
+}
+
+/* Footer social icons pop and glow */
+footer.reveal-section a.rounded-full {
+  transform: scale(0.9) translateZ(0);
+  transition: transform 600ms cubic-bezier(0.19, 1, 0.22, 1),
+              box-shadow 600ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+footer.reveal-section.is-visible a.rounded-full {
+  transform: scale(1) translateZ(0);
+}
+
+footer a.rounded-full:hover,
+.reveal-section a.rounded-full:hover {
+  transform: translateY(-3px) scale(1.05) translateZ(0) !important;
+  color: #C5A376 !important;
+  border-color: #C5A376 !important;
+  box-shadow: 0 0 15px rgba(197, 163, 118, 0.3) !important;
+}
+
+/* Footer links underlines */
+footer a:not(.w-10) {
+  position: relative;
+  display: inline-block;
+}
+footer a:not(.w-10)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #C5A376;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 500ms cubic-bezier(0.19, 1, 0.22, 1) !important;
+}
+footer a:not(.w-10):hover::after {
+  transform: scaleX(1);
+}
+
+/* Input focus shift */
+footer input:focus {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: #C5A376 !important;
+  box-shadow: 0 0 25px rgba(197, 163, 118, 0.2) !important;
+  transform: translateY(-1px) translateZ(0);
+}
+
+/* Background floating glow keyframes */
+@keyframes pulseGlow {
+  0% { opacity: 0.15; }
+  50% { opacity: 0.3; }
+  100% { opacity: 0.15; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) translateZ(0); }
+  50% { transform: translateY(-5px) translateZ(0); }
+  100% { transform: translateY(0px) translateZ(0); }
+}
+
+.absolute.bottom-8,
+.reveal-cards span.text-\[9px\]:first-child {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes kenburns {
+  0% { transform: scale(1.02) translateZ(0); }
+  50% { transform: scale(1.07) translateZ(0); }
+  100% { transform: scale(1.02) translateZ(0); }
+}
+
+.animate-kenburns {
+  animation: kenburns 25s ease-in-out infinite alternate;
+}
+
+.luxury-gradient {
+  background: linear-gradient(to bottom, rgba(45,42,38,0.6) 0%, rgba(45,42,38,0.1) 40%, rgba(45,42,38,0.2) 65%, rgba(45,42,38,0.85) 100%);
+}
+
+.luxury-gradient-dark {
+  background: linear-gradient(to bottom, rgba(45,42,38,0.95) 0%, rgba(45,42,38,0.7) 100%);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #FAF9F6;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #DDD9CE;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #8C7B6A;
+}
+
+/* Mobile responsive improvements media query */
+@media (max-width: 768px) {
+  section {
+    padding-top: 4.5rem !important; /* py-18 spacing */
+    padding-bottom: 4.5rem !important;
+  }
+  
+  /* Touch target sizes (minimum 44px height for interactive structures) */
+  button, 
+  a.btn-premium,
+  input,
+  select,
+  textarea {
+    min-height: 44px !important;
+  }
+  
+  /* Adjust custom letter tracking to maximize readability on narrower displays */
+  h1 {
+    font-size: 38px !important;
+  }
+  
+  h2 {
+    font-size: 28px !important;
+  }
+  
+  h3 {
+    font-size: 22px !important;
+  }
+  
+  p, span, a, input, select, textarea {
+    font-size: 14px !important;
+  }
+
+  .grid {
+    gap: 1.5rem !important;
+  }
+}
+
+@keyframes scrollDot {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  65% {
+    transform: translateY(14px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(22px);
+    opacity: 0;
+  }
+}
+
+.animate-scroll-dot {
+  animation: scrollDot 2.8s cubic-bezier(0.19, 1, 0.22, 1) infinite;
+}
+
+/* Compliance with prefers-reduced-motion standard */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* Accessibility contrast overrides for secondary sand/gray text on light backgrounds */
+[class*="text-[#8C867A]"], .text-\[\#8C867A\] {
+  color: #726E65 !important;
+}
+[class*="text-[#8C7B6A]"], .text-\[\#8C7B6A\] {
+  color: #726558 !important;
+}
+
