@@ -1,4 +1,6 @@
-<div align="center">
+<p align="center">
+  <img src="./github-banner.png" alt="ESTATE Luxury Real Estate Platform" width="100%">
+</p>
 
 # ESTATE — Luxury Real Estate Platform
 
