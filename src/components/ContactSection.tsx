@@ -102,9 +102,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenInquire })
                 <p className="text-xs text-[#6B665E] font-light mb-1">
                   Prefer immediate digital booking?
                 </p>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#1A1917]">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-[#1A1917]">
                   Book a Private Viewing
-                </h4>
+                </h3>
               </div>
               <button
                 onClick={onOpenInquire}
@@ -144,9 +144,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenInquire })
                           {card.value}
                         </a>
                       ) : (
-                        <h4 className="font-serif text-[15px] font-light text-[#1A1917] leading-tight mb-1">
+                        <h3 className="font-serif text-[15px] font-light text-[#1A1917] leading-tight mb-1">
                           {card.value}
-                        </h4>
+                        </h3>
                       )}
                       <p className="text-[10px] text-[#6B665E] font-light leading-snug">
                         {card.desc}

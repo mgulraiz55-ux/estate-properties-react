@@ -101,7 +101,7 @@ export const AdvisorsSection: React.FC<AdvisorsSectionProps> = React.memo(({ onC
                       <a
                         href={`mailto:${advisor.email}`}
                         className="text-[#6B665E] hover:text-[#C5A376] transition-colors p-1"
-                        aria-label="Email"
+                        aria-label={`Email ${advisor.name}`}
                       >
                         <Mail className="w-3.5 h-3.5" />
                       </a>
@@ -109,7 +109,7 @@ export const AdvisorsSection: React.FC<AdvisorsSectionProps> = React.memo(({ onC
                       <a
                         href={`tel:${advisor.phone}`}
                         className="text-[#6B665E] hover:text-[#C5A376] transition-colors p-1"
-                        aria-label="Phone"
+                        aria-label={`Call ${advisor.name}`}
                       >
                         <Phone className="w-3.5 h-3.5" />
                       </a>
@@ -117,7 +117,7 @@ export const AdvisorsSection: React.FC<AdvisorsSectionProps> = React.memo(({ onC
                       <a
                         href="#"
                         className="text-[#6B665E] hover:text-[#C5A376] transition-colors p-1"
-                        aria-label="LinkedIn"
+                        aria-label={`LinkedIn profile of ${advisor.name}`}
                       >
                         <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />

@@ -823,16 +823,16 @@ footer input:focus {
   color: #726558 !important;
 }
 
-/* Custom live monitor scanner beam animation */
+/* Custom live monitor scanner beam animation (hardware-accelerated GPU translate) */
 @keyframes scan {
   0% {
-    top: 0%;
+    transform: translate3d(0, 0, 0);
   }
   50% {
-    top: 99.5%;
+    transform: translate3d(0, calc(100% - 2px), 0);
   }
   100% {
-    top: 0%;
+    transform: translate3d(0, 0, 0);
   }
 }
 

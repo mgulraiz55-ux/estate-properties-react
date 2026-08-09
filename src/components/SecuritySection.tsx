@@ -176,18 +176,19 @@ export const SecuritySection: React.FC = React.memo(() => {
                 {/* Scanline Grid overlay */}
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[size:100%_4px,3px_100%] pointer-events-none z-20" />
                 
-                {/* Horizontal scanner beam */}
+                {/* Horizontal scanner beam - hardware composited */}
                 {isScannerRunning && (
-                  <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-[#C5A376]/40 shadow-[0_0_10px_#C5A376] pointer-events-none z-20 animate-[scan_5s_linear_infinite]" />
+                  <div className="absolute inset-0 h-full w-full border-t-2 border-[#C5A376]/45 pointer-events-none z-20 animate-[scan_5s_linear_infinite]" />
                 )}
 
                 {/* Surveillance footage display with Ken Burns effect */}
                 <img
-                  src={getOptimizedUnsplashUrl(activeCam.image, 1200)}
-                  srcSet={getUnsplashSrcSet(activeCam.image, [640, 1024, 1200])}
-                  sizes="(max-width: 1024px) 100vw, 65vw"
+                  src={getOptimizedUnsplashUrl(activeCam.image, 800, 75)}
+                  srcSet={getUnsplashSrcSet(activeCam.image, [640, 800, 1024, 1200], 75)}
+                  sizes="(max-width: 1024px) 100vw, 850px"
                   alt={`Security camera footage showing ${activeCam.name}`}
                   className="w-full h-full object-cover opacity-85 transition-transform duration-[8000ms] ease-out scale-105 group-hover:scale-100 filter contrast-[1.05] brightness-[0.80] grayscale-[20%]"
+                  loading="lazy"
                 />
 
                 {/* Ambient vignette */}

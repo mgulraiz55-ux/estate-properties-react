@@ -154,6 +154,7 @@ export const Navbar: React.FC<NavbarProps> = React.memo(({ onOpenInquire, onOpen
             </span>
             <button
               onClick={() => setMobileMenuOpen(false)}
+              aria-label="Close navigation menu"
               className="min-w-[44px] min-h-[44px] flex items-center justify-center text-white/60 hover:text-white transition-colors duration-300"
             >
               <X className="w-7 h-7" />

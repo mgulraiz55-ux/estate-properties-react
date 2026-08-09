@@ -124,43 +124,31 @@ export const Hero: React.FC<HeroProps> = React.memo(({ onExploreClick, onConsult
       <div className="relative z-20 text-center px-6 max-w-[900px] mx-auto flex flex-col items-center gap-6 md:gap-8 mt-12 lg:mt-16">
         
         {/* Tagline Badge */}
-        <div 
-          className={`transform transition-all duration-[800ms] ease-out mb-2 md:mb-4 ${
-            mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-        >
-          <span className="inline-block text-[9px] sm:text-[10px] font-semibold tracking-[0.45em] uppercase text-[#C5A376] bg-black/45 backdrop-blur-md px-6 py-2 border border-white/10 shadow-lg">
+        <div className="mb-2 md:mb-4">
+          <span className="inline-block text-[9px] sm:text-[10px] font-semibold tracking-[0.45em] uppercase text-[#C5A376] bg-black/45 backdrop-blur-md px-6 py-2 border border-white/10 shadow-lg animate-fadeIn duration-[800ms]">
             THE PINNACLE OF PRIVATE WEALTH ARCHITECTURE
           </span>
         </div>
 
-        {/* Heading - Split into two lines, refined serif */}
+        {/* Heading - Split into two lines, refined serif - hardware composited */}
         <h1 
-          className={`font-serif text-4xl sm:text-5xl md:text-6xl text-white font-normal tracking-tight leading-[1.15] drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] drop-shadow-[0_8px_32px_rgba(0,0,0,0.4)] transform transition-all duration-[1000ms] delay-[150ms] ease-out mb-6 md:mb-8 ${
-            mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
+          className="font-serif text-4xl sm:text-5xl md:text-6xl text-white font-normal tracking-tight leading-[1.15] drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] drop-shadow-[0_8px_32px_rgba(0,0,0,0.4)] mb-6 md:mb-8 animate-fadeIn duration-[1000ms]"
         >
           Exquisite Living,<br />Defined
         </h1>
 
         {/* Subtitle - High contrast, max-width 650px */}
         <p 
-          className={`text-xs sm:text-sm md:text-base text-white max-w-[650px] mx-auto font-medium leading-[1.8] tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)] transform transition-all duration-[1000ms] delay-[300ms] ease-out ${
-            mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
+          className="text-xs sm:text-sm md:text-base text-white max-w-[650px] mx-auto font-medium leading-[1.8] tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)] drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)] animate-fadeIn duration-[1000ms]"
         >
           Curating the world&apos;s most prestigious architectural masterpieces for the most discerning global clients under strictly confidential terms.
         </p>
 
         {/* Action Buttons - Centered stack, matching height & width */}
-        <div 
-          className={`flex flex-col sm:flex-row items-center justify-center gap-6 mt-12 md:mt-14 w-full max-w-md sm:max-w-xl transform transition-all duration-[1200ms] delay-[450ms] ease-out ${
-            mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
-        >
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12 md:mt-14 w-full max-w-md sm:max-w-xl animate-fadeIn duration-[1200ms]">
           <button
             onClick={onExploreClick}
-            className="w-full sm:w-80 h-[50px] bg-[#C5A376] text-white font-semibold text-xs tracking-[0.22em] uppercase border border-[#C5A376] hover:bg-[#B59265] hover:border-[#B59265] transition-all duration-500 shadow-xl flex items-center justify-center gap-2 group hover:shadow-[0_15px_40px_rgba(197,163,118,0.45)] hover:-translate-y-1 hover:scale-[1.02]"
+            className="w-full sm:w-80 h-[50px] bg-[#C5A376] text-[#1A1917] font-semibold text-xs tracking-[0.22em] uppercase border border-[#C5A376] hover:bg-[#B59265] hover:border-[#B59265] transition-all duration-500 shadow-xl flex items-center justify-center gap-2 group hover:shadow-[0_15px_40px_rgba(197,163,118,0.45)] hover:-translate-y-1 hover:scale-[1.02] cursor-pointer"
           >
             <span>Explore Properties</span>
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -168,7 +156,7 @@ export const Hero: React.FC<HeroProps> = React.memo(({ onExploreClick, onConsult
 
           <button
             onClick={onConsultationClick}
-            className="w-full sm:w-80 h-[50px] bg-white/5 border border-white/20 text-white font-bold text-xs tracking-[0.22em] uppercase backdrop-blur-lg hover:bg-white/10 hover:border-white hover:shadow-[0_15px_30px_rgba(255,255,255,0.15)] transition-all duration-500 flex items-center justify-center hover:-translate-y-1 hover:scale-[1.02]"
+            className="w-full sm:w-80 h-[50px] bg-white/5 border border-white/20 text-white font-bold text-xs tracking-[0.22em] uppercase backdrop-blur-lg hover:bg-white/10 hover:border-white hover:shadow-[0_15px_30px_rgba(255,255,255,0.15)] transition-all duration-500 flex items-center justify-center hover:-translate-y-1 hover:scale-[1.02] cursor-pointer"
           >
             Schedule Consultation
           </button>

@@ -2,7 +2,7 @@
  * Helper utility to construct responsive srcSets for Unsplash CDN images.
  * Extracts the base URL and appends customized width and quality queries.
  */
-export const getUnsplashSrcSet = (url: string, widths: number[] = [480, 768, 1024, 1440]) => {
+export const getUnsplashSrcSet = (url: string, widths: number[] = [480, 768, 1024, 1440], quality: number = 75) => {
   if (!url || typeof url !== 'string' || !url.includes('unsplash.com')) {
     return undefined;
   }
@@ -11,7 +11,7 @@ export const getUnsplashSrcSet = (url: string, widths: number[] = [480, 768, 102
   const baseUrl = url.split('?')[0];
   
   return widths
-    .map(w => `${baseUrl}?auto=format&fit=crop&w=${w}&q=80 ${w}w`)
+    .map(w => `${baseUrl}?auto=format&fit=crop&w=${w}&q=${quality} ${w}w`)
     .join(', ');
 };
 

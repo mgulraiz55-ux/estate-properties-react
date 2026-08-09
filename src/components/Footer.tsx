@@ -128,9 +128,9 @@ export const Footer: React.FC = React.memo(() => {
 
           {/* Column 1: Company */}
           <div className="lg:col-span-2 flex flex-col gap-6">
-            <h6 className="font-serif text-sm font-light tracking-[0.2em] text-[#C5A376] uppercase">
+            <h3 className="font-serif text-sm font-light tracking-[0.2em] text-[#C5A376] uppercase">
               Company
-            </h6>
+            </h3>
             <ul className="space-y-4 text-xs font-light">
               {col1Links.map((link) => (
                 <li key={link.name}>
@@ -148,9 +148,9 @@ export const Footer: React.FC = React.memo(() => {
 
           {/* Column 2: Properties */}
           <div className="lg:col-span-2 flex flex-col gap-6">
-            <h6 className="font-serif text-sm font-light tracking-[0.2em] text-[#C5A376] uppercase">
+            <h3 className="font-serif text-sm font-light tracking-[0.2em] text-[#C5A376] uppercase">
               Properties
-            </h6>
+            </h3>
             <ul className="space-y-4 text-xs font-light">
               {col2Links.map((link) => (
                 <li key={link.name}>
@@ -168,9 +168,9 @@ export const Footer: React.FC = React.memo(() => {
 
           {/* Column 3: Services */}
           <div className="lg:col-span-2 flex flex-col gap-6">
-            <h6 className="font-serif text-sm font-light tracking-[0.2em] text-[#C5A376] uppercase">
+            <h3 className="font-serif text-sm font-light tracking-[0.2em] text-[#C5A376] uppercase">
               Services
-            </h6>
+            </h3>
             <ul className="space-y-4 text-xs font-light">
               {col3Links.map((link) => (
                 <li key={link.name}>
@@ -188,9 +188,9 @@ export const Footer: React.FC = React.memo(() => {
 
           {/* Column 4: Contact */}
           <div className="lg:col-span-2 flex flex-col gap-6">
-            <h6 className="font-serif text-sm font-light tracking-[0.2em] text-[#C5A376] uppercase">
+            <h3 className="font-serif text-sm font-light tracking-[0.2em] text-[#C5A376] uppercase">
               Contact
-            </h6>
+            </h3>
             <ul className="space-y-4 text-xs font-light">
               <li className="flex items-center gap-3">
                 <Phone className="w-3.5 h-3.5 text-[#C5A376]" />
@@ -221,9 +221,9 @@ export const Footer: React.FC = React.memo(() => {
         <div className="border-t border-[#C5A376]/20 pt-16 pb-12 mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-6">
-              <h5 className="font-serif text-2xl font-light tracking-wide text-white mb-2">
+              <h3 className="font-serif text-2xl font-light tracking-wide text-white mb-2">
                 Private Market Intelligence
-              </h5>
+              </h3>
               <p className="text-xs text-[#E5E2DA]/50 font-light leading-relaxed max-w-lg">
                 Receive confidential market reports, investment insights, and exclusive off-market opportunities.
               </p>

@@ -109,9 +109,9 @@ export const TestimonialsSection: React.FC = React.memo(() => {
                   />
                 </div>
                 <div>
-                  <h5 className="text-xs font-semibold tracking-[0.2em] text-[#1A1917] uppercase mb-1">
+                  <h3 className="text-xs font-semibold tracking-[0.2em] text-[#1A1917] uppercase mb-1">
                     {t.author}
-                  </h5>
+                  </h3>
                   <p className="text-[9px] font-semibold tracking-[0.25em] text-[#C5A376] uppercase">
                     {t.location} &bull; {propertyPurchased[t.id]}
                   </p>
@@ -160,9 +160,9 @@ export const TestimonialsSection: React.FC = React.memo(() => {
                     />
                   </div>
                   <div>
-                    <h5 className="text-xs font-semibold tracking-[0.2em] text-[#1A1917] uppercase mb-1">
+                    <h3 className="text-xs font-semibold tracking-[0.2em] text-[#1A1917] uppercase mb-1">
                       {t.author}
-                    </h5>
+                    </h3>
                     <p className="text-[9px] font-semibold tracking-[0.25em] text-[#C5A376] uppercase">
                       {t.location} &bull; {propertyPurchased[t.id]}
                     </p>

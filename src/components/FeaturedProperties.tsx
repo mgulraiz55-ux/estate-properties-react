@@ -49,7 +49,7 @@ export const FeaturedProperties: React.FC<FeaturedPropertiesProps> = React.memo(
             }}
             className={`px-6 py-3.5 text-[11px] font-semibold tracking-[0.22em] uppercase border transition-all duration-500 rounded-full backdrop-blur-md ${
               !showOnlyOffMarket && activeCategory === 'All'
-                ? 'bg-[#C5A376] text-white border-[#C5A376] shadow-[0_4px_20px_rgba(197,163,118,0.25)]'
+                ? 'bg-[#C5A376] text-[#1A1917] border-[#C5A376] shadow-[0_4px_20px_rgba(197,163,118,0.25)]'
                 : 'bg-[#FAF9F6]/40 text-[#6B665E] border-[#E5E2DA]/85 hover:bg-[#1A1917]/5 hover:text-[#1A1917] hover:border-[#1A1917]/30'
             }`}
           >
@@ -65,7 +65,7 @@ export const FeaturedProperties: React.FC<FeaturedPropertiesProps> = React.memo(
               }}
               className={`px-6 py-3.5 text-[11px] font-semibold tracking-[0.22em] uppercase border transition-all duration-500 rounded-full backdrop-blur-md ${
                 !showOnlyOffMarket && activeCategory === cat
-                  ? 'bg-[#C5A376] text-white border-[#C5A376] shadow-[0_4px_20px_rgba(197,163,118,0.25)]'
+                  ? 'bg-[#C5A376] text-[#1A1917] border-[#C5A376] shadow-[0_4px_20px_rgba(197,163,118,0.25)]'
                   : 'bg-[#FAF9F6]/40 text-[#6B665E] border-[#E5E2DA]/85 hover:bg-[#1A1917]/5 hover:text-[#1A1917] hover:border-[#1A1917]/30'
               }`}
             >
@@ -77,8 +77,8 @@ export const FeaturedProperties: React.FC<FeaturedPropertiesProps> = React.memo(
             onClick={() => setShowOnlyOffMarket(!showOnlyOffMarket)}
             className={`px-6 py-3.5 text-[11px] font-semibold tracking-[0.22em] uppercase border flex items-center gap-2 transition-all duration-500 rounded-full backdrop-blur-md ${
               showOnlyOffMarket
-                ? 'bg-[#C5A376] text-white border-[#C5A376] shadow-[0_4px_20px_rgba(197,163,118,0.25)]'
-                : 'bg-[#C5A376]/5 text-[#C5A376] border-[#C5A376]/50 hover:bg-[#C5A376] hover:text-white hover:border-[#C5A376] hover:shadow-[0_4px_20px_rgba(197,163,118,0.15)]'
+                ? 'bg-[#C5A376] text-[#1A1917] border-[#C5A376] shadow-[0_4px_20px_rgba(197,163,118,0.25)]'
+                : 'bg-[#C5A376]/5 text-[#726558] border-[#C5A376]/50 hover:bg-[#C5A376] hover:text-[#1A1917] hover:border-[#C5A376] hover:shadow-[0_4px_20px_rgba(197,163,118,0.15)]'
             }`}
           >
             <Sparkles className="w-3.5 h-3.5" />
