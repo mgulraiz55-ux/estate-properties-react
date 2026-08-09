@@ -272,7 +272,7 @@ export const SecuritySection: React.FC = React.memo(() => {
               Security Monitoring Demo
             </h3>
 
-            <div className="grid grid-cols-2 lg:grid-cols-1 gap-4 max-h-[580px] overflow-y-auto pr-1 select-scrollbar">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 max-h-[580px] overflow-y-auto overflow-x-hidden pr-2 select-scrollbar">
               {cameraFeeds.map((cam, idx) => (
                 <ScrollReveal key={cam.id} delay={idx * 80}>
                   <div
