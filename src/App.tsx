@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Property, Article, Advisor } from './types';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { SecuritySection } from './components/SecuritySection';
 import { FeaturedProperties } from './components/FeaturedProperties';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { AboutSection } from './components/AboutSection';
@@ -205,6 +206,8 @@ export default function App() {
           onExploreClick={handleScrollToProperties}
           onConsultationClick={() => handleOpenInquire('Private Wealth & Architectural Consultation')}
         />
+
+        <SecuritySection />
 
         <FeaturedProperties
           onSelectProperty={(prop) => setSelectedProperty(prop)}

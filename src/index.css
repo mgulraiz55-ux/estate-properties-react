@@ -823,3 +823,31 @@ footer input:focus {
   color: #726558 !important;
 }
 
+/* Custom live monitor scanner beam animation */
+@keyframes scan {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 99.5%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+/* Custom scrollbar utility for camera selector grid */
+.select-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.select-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+.select-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(197, 163, 118, 0.25);
+  border-radius: 9px;
+}
+.select-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(197, 163, 118, 0.45);
+}
+
