@@ -148,7 +148,7 @@ export const SecuritySection: React.FC = React.memo(() => {
           </div>
           <ScrollReveal delay={150}>
             <div className="max-w-xl">
-              <p className="text-sm sm:text-base text-[#726E65] font-light leading-relaxed mb-6">
+              <p className="text-sm sm:text-base text-[#C4C0B5] font-light leading-relaxed mb-6">
                 All premium ESTATE residences feature customized security infrastructure. Designed for absolute privacy, our systems deliver constant protection. (Simulated security presentation showing demonstration footage).
               </p>
               {/* Monitored Status Badge */}
@@ -272,7 +272,7 @@ export const SecuritySection: React.FC = React.memo(() => {
               Security Monitoring Demo
             </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 max-h-[580px] overflow-y-auto overflow-x-hidden pr-2 select-scrollbar">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 max-h-[580px] lg:max-h-none overflow-y-auto overflow-x-hidden pr-2 select-scrollbar">
               {cameraFeeds.map((cam, idx) => (
                 <ScrollReveal key={cam.id} delay={idx * 80}>
                   <div
