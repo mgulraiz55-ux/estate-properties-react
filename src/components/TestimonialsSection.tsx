@@ -131,7 +131,7 @@ export const TestimonialsSection: React.FC = React.memo(() => {
             return (
               <div
                 key={t.id}
-                className="group bg-white/85 backdrop-blur-sm p-8 sm:p-12 border border-[#E5E2DA]/40 shadow-md hover:border-[#C5A376]/45 hover:shadow-[0_25px_50px_rgba(26,25,23,0.08)] hover:-translate-y-2 transition-all duration-[400ms] ease-out flex flex-col justify-between rounded-[20px] min-h-[420px]"
+                className="group bg-white/85 backdrop-blur-sm p-6 sm:p-12 border border-[#E5E2DA]/40 shadow-md hover:border-[#C5A376]/45 hover:shadow-[0_25px_50px_rgba(26,25,23,0.08)] hover:-translate-y-2 transition-all duration-[400ms] ease-out flex flex-col justify-between rounded-[20px] min-h-[420px]"
               >
                 <div>
                   <div className="flex justify-between items-start mb-8">

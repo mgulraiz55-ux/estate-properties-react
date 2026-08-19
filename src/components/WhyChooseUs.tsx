@@ -118,12 +118,12 @@ export const WhyChooseUs: React.FC = React.memo(() => {
             </div>
 
             {/* Premium Statistics Cards Row */}
-            <div className="grid grid-cols-3 gap-4 mt-2">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-2">
               {stats.map((stat, idx) => (
                 <div 
                   key={stat.label} 
                   style={{ transitionDelay: `${idx * 150}ms` }}
-                  className={`bg-[#FAF9F6]/40 backdrop-blur-md border border-[#E5E2DA]/60 p-4 rounded-xl shadow-sm text-center transform transition-all duration-700 ease-out ${
+                  className={`bg-[#FAF9F6]/40 backdrop-blur-md border border-[#E5E2DA]/60 p-2 sm:p-4 rounded-xl shadow-sm text-center transform transition-all duration-700 ease-out ${
                     mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                 >
@@ -186,7 +186,7 @@ export const WhyChooseUs: React.FC = React.memo(() => {
             </div>
 
             {/* Founder Quote Floating Badge - Upgraded with Gold Accent lines and Light Glass */}
-            <div className="absolute -bottom-8 -left-4 md:bottom-12 md:-left-12 bg-white/80 backdrop-blur-md p-8 md:p-10 text-[#1A1917] max-w-xs md:max-w-sm shadow-2xl border-l-4 border-l-[#C5A376] border-y border-r border-[#E5E2DA]/65 transition-all duration-500 hover:border-[#C5A376]/50 rounded-r-2xl rounded-l-sm">
+            <div className="absolute -bottom-8 left-2 right-2 md:left-[-48px] md:right-auto md:bottom-12 md:max-w-sm bg-white/80 backdrop-blur-md p-5 sm:p-8 md:p-10 text-[#1A1917] shadow-2xl border-l-4 border-l-[#C5A376] border-y border-r border-[#E5E2DA]/65 transition-all duration-500 hover:border-[#C5A376]/50 rounded-r-2xl rounded-l-sm">
               <Quote className="w-8 h-8 text-[#C5A376] opacity-60 mb-4" />
               <p className="font-serif text-lg md:text-xl font-light italic mb-5 leading-relaxed text-[#1A1917]/95">
                 &quot;Architecture is a visual art, and the buildings speak for themselves.&quot;

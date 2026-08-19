@@ -178,30 +178,30 @@ export const Hero: React.FC<HeroProps> = React.memo(({ onExploreClick, onConsult
 
         {/* Statistics Floating Glass Card overlapping next section by 48px naturally via negative margin */}
         <div className="w-full max-w-4xl px-6 mb-[-48px] relative z-30">
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-md py-5 px-10 flex justify-between items-center gap-4 sm:gap-8 shadow-2xl">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-md py-5 px-4 sm:px-10 flex justify-between items-center gap-2 sm:gap-8 shadow-2xl">
             <div className="text-center flex-1">
-              <div className="font-serif text-2xl sm:text-3xl md:text-4xl font-light text-white">
+              <div className="font-serif text-xl sm:text-3xl md:text-4xl font-light text-white">
                 <AnimatedCounter target={12} prefix="$" suffix="B+" mounted={mounted} />
               </div>
-              <div className="text-[8px] font-semibold tracking-[0.25em] text-white/50 uppercase mt-1">
+              <div className="text-[8px] font-semibold tracking-[0.15em] sm:tracking-[0.25em] text-white/50 uppercase mt-1">
                 Total Sales
               </div>
             </div>
             <div className="h-10 w-[1px] bg-white/10" />
             <div className="text-center flex-1">
-              <div className="font-serif text-2xl sm:text-3xl md:text-4xl font-light text-white">
+              <div className="font-serif text-xl sm:text-3xl md:text-4xl font-light text-white">
                 <AnimatedCounter target={24} mounted={mounted} />
               </div>
-              <div className="text-[8px] font-semibold tracking-[0.25em] text-white/50 uppercase mt-1">
+              <div className="text-[8px] font-semibold tracking-[0.15em] sm:tracking-[0.25em] text-white/50 uppercase mt-1">
                 Global Markets
               </div>
             </div>
             <div className="h-10 w-[1px] bg-white/10" />
             <div className="text-center flex-1">
-              <div className="font-serif text-2xl sm:text-3xl md:text-4xl font-light text-[#C5A376]">
+              <div className="font-serif text-xl sm:text-3xl md:text-4xl font-light text-[#C5A376]">
                 <AnimatedCounter target={30} suffix="+" mounted={mounted} />
               </div>
-              <div className="text-[8px] font-semibold tracking-[0.25em] text-white/50 uppercase mt-1">
+              <div className="text-[8px] font-semibold tracking-[0.15em] sm:tracking-[0.25em] text-white/50 uppercase mt-1">
                 Years Dominance
               </div>
             </div>

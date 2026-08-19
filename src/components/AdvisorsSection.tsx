@@ -146,17 +146,17 @@ export const AdvisorsSection: React.FC<AdvisorsSectionProps> = React.memo(({ onC
 
                 {/* Glassmorphism details panel */}
                 <div className="bg-[#FAF9F6]/60 backdrop-blur-sm border border-[#E5E2DA]/40 rounded-xl p-4 mt-auto shadow-sm space-y-2.5 text-[11px] font-light text-[#6B665E]">
-                  <div className="flex justify-between items-center">
-                    <span className="text-[#8C867A]">Languages</span>
-                    <span className="font-normal text-[#1A1917]">{meta.languages}</span>
+                  <div className="flex justify-between items-start gap-2">
+                    <span className="text-[#8C867A] shrink-0">Languages</span>
+                    <span className="font-normal text-[#1A1917] text-right">{meta.languages}</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-[#8C867A]">Experience</span>
-                    <span className="font-normal text-[#1A1917]">{meta.experience}</span>
+                  <div className="flex justify-between items-start gap-2">
+                    <span className="text-[#8C867A] shrink-0">Experience</span>
+                    <span className="font-normal text-[#1A1917] text-right">{meta.experience}</span>
                   </div>
-                  <div className="flex justify-between items-center pt-1">
-                    <span className="text-[#8C867A]">Sales Volume</span>
-                    <span className="font-serif font-normal text-[#C5A376] tracking-wide text-[12px]">
+                  <div className="flex justify-between items-start gap-2 pt-1">
+                    <span className="text-[#8C867A] shrink-0">Sales Volume</span>
+                    <span className="font-serif font-normal text-[#C5A376] tracking-wide text-[12px] text-right">
                       {meta.volume}
                     </span>
                   </div>

@@ -32,8 +32,8 @@ export const AboutSection: React.FC = React.memo(() => {
 
           {/* Key Metric Rows */}
           <div className="space-y-8 border-t border-[#E5E2DA] pt-8">
-            <div className="flex items-center gap-8 border-b border-[#E5E2DA] pb-8">
-              <span className="font-serif text-5xl md:text-6xl text-[#8C7B6A] font-normal min-w-[120px]">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8 border-b border-[#E5E2DA] pb-8">
+              <span className="font-serif text-5xl md:text-6xl text-[#8C7B6A] font-normal min-w-0 sm:min-w-[120px]">
                 30
               </span>
               <div>
@@ -46,8 +46,8 @@ export const AboutSection: React.FC = React.memo(() => {
               </div>
             </div>
 
-            <div className="flex items-center gap-8 border-b border-[#E5E2DA] pb-8">
-              <span className="font-serif text-5xl md:text-6xl text-[#8C7B6A] font-normal min-w-[120px]">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8 border-b border-[#E5E2DA] pb-8">
+              <span className="font-serif text-5xl md:text-6xl text-[#8C7B6A] font-normal min-w-0 sm:min-w-[120px]">
                 500+
               </span>
               <div>
@@ -60,8 +60,8 @@ export const AboutSection: React.FC = React.memo(() => {
               </div>
             </div>
 
-            <div className="flex items-center gap-8">
-              <span className="font-serif text-5xl md:text-6xl text-[#8C7B6A] font-normal min-w-[120px]">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8">
+              <span className="font-serif text-5xl md:text-6xl text-[#8C7B6A] font-normal min-w-0 sm:min-w-[120px]">
                 10k+
               </span>
               <div>

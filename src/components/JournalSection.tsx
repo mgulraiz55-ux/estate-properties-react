@@ -60,16 +60,16 @@ export const JournalSection: React.FC<JournalSectionProps> = React.memo(({ onSel
               {/* Featured Text content */}
               <div className="lg:col-span-5 flex flex-col justify-between h-full py-2">
                 <div>
-                  <div className="flex items-center gap-3.5 mb-6 text-[9px] font-semibold tracking-[0.2em] text-[#8C867A] uppercase">
+                  <div className="flex flex-wrap items-center gap-x-3.5 gap-y-2 mb-6 text-[9px] font-semibold tracking-[0.2em] text-[#8C867A] uppercase">
                     <span className="text-[#C5A376] bg-[#C5A376]/5 border border-[#C5A376]/15 px-3 py-1.5 rounded-full uppercase">
                       {featuredArticle.category}
                     </span>
-                    <span className="w-[1px] h-2.5 bg-[#E5E2DA]" />
+                    <span className="hidden sm:inline-block w-[1px] h-2.5 bg-[#E5E2DA]" />
                     <span className="text-[#6B665E] flex items-center gap-1">
                       <Calendar className="w-3 h-3 text-[#C5A376]/70" />
                       {featuredArticle.date}
                     </span>
-                    <span className="w-[1px] h-2.5 bg-[#E5E2DA]" />
+                    <span className="hidden sm:inline-block w-[1px] h-2.5 bg-[#E5E2DA]" />
                     <span className="text-[#6B665E] flex items-center gap-1">
                       <Clock className="w-3 h-3 text-[#C5A376]/70" />
                       {featuredArticle.readTime}
@@ -120,16 +120,16 @@ export const JournalSection: React.FC<JournalSectionProps> = React.memo(({ onSel
                 </div>
 
                 {/* Meta Row */}
-                <div className="flex items-center gap-3.5 mb-5 text-[9px] font-semibold tracking-[0.2em] text-[#8C867A] uppercase">
+                <div className="flex flex-wrap items-center gap-x-3.5 gap-y-2 mb-5 text-[9px] font-semibold tracking-[0.2em] text-[#8C867A] uppercase">
                   <span className="text-[#C5A376] bg-[#C5A376]/5 border border-[#C5A376]/15 px-3 py-1.5 rounded-full uppercase">
                     {article.category}
                   </span>
-                  <span className="w-[1px] h-2.5 bg-[#E5E2DA]" />
+                  <span className="hidden sm:inline-block w-[1px] h-2.5 bg-[#E5E2DA]" />
                   <span className="text-[#6B665E] flex items-center gap-1">
                     <Calendar className="w-3 h-3 text-[#C5A376]/70" />
                     {article.date}
                   </span>
-                  <span className="w-[1px] h-2.5 bg-[#E5E2DA]" />
+                  <span className="hidden sm:inline-block w-[1px] h-2.5 bg-[#E5E2DA]" />
                   <span className="text-[#6B665E] flex items-center gap-1">
                     <Clock className="w-3 h-3 text-[#C5A376]/70" />
                     {article.readTime}

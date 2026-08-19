@@ -264,7 +264,7 @@ export const Footer: React.FC = React.memo(() => {
           <div className="text-[10px] font-semibold tracking-[0.25em] text-white/40 uppercase">
             &copy; 2026 ESTATE Private Advisory
           </div>
-          <div className="flex flex-wrap justify-center gap-8 text-[10px] font-semibold tracking-[0.2em] text-white/40">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 sm:gap-8 text-[10px] font-semibold tracking-[0.2em] text-white/40">
             <a href="#" className="hover:text-white transition-colors duration-300">PRIVACY POLICY</a>
             <a href="#" className="hover:text-white transition-colors duration-300">TERMS</a>
             <a href="#" className="hover:text-white transition-colors duration-300">COOKIES</a>

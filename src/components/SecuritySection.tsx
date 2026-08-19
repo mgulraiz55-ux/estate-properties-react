@@ -195,41 +195,41 @@ export const SecuritySection: React.FC = React.memo(() => {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.7)_100%)] pointer-events-none z-10" />
 
                 {/* HUD Live Indicators */}
-                <div className="absolute inset-x-0 top-0 p-6 flex justify-between items-start z-30 pointer-events-none">
+                <div className="absolute inset-x-0 top-0 p-3 sm:p-6 flex justify-between items-start z-30 pointer-events-none">
                   {/* Feed Status */}
-                  <div className="flex flex-col gap-1.5">
-                    <div className="inline-flex items-center gap-2 bg-black/60 px-3.5 py-1.5 border border-[#C5A376]/20 backdrop-blur-md rounded-[4px]">
-                      <span className="relative flex h-2 w-2">
+                  <div className="flex flex-col gap-1 sm:gap-1.5">
+                    <div className="inline-flex items-center gap-1.5 sm:gap-2 bg-black/60 px-2 py-1 sm:px-3.5 sm:py-1.5 border border-[#C5A376]/20 backdrop-blur-md rounded-[4px]">
+                      <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+                        <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-red-600"></span>
                       </span>
-                      <span className="text-[10px] font-semibold tracking-widest text-white uppercase">DEMO FEED</span>
+                      <span className="text-[8px] sm:text-[10px] font-semibold tracking-widest text-white uppercase">DEMO FEED</span>
                     </div>
-                    <span className="text-[9px] font-bold text-white/50 bg-black/40 px-2 py-0.5 rounded tracking-widest self-start uppercase font-mono">{activeCam.camId}</span>
+                    <span className="text-[7px] sm:text-[9px] font-bold text-white/50 bg-black/40 px-1.5 py-0.5 rounded tracking-widest self-start uppercase font-mono">{activeCam.camId}</span>
                   </div>
 
                   {/* Feed Metadata */}
-                  <div className="flex flex-col items-end gap-1.5 font-mono text-[9px] text-[#C5A376] bg-black/60 px-3.5 py-2 border border-[#C5A376]/10 backdrop-blur-md rounded">
+                  <div className="flex flex-col items-end gap-1 sm:gap-1.5 font-mono text-[7.5px] sm:text-[9px] text-[#C5A376] bg-black/60 px-2 py-1.5 sm:px-3.5 sm:py-2 border border-[#C5A376]/10 backdrop-blur-md rounded">
                     <div>RESOL: {activeCam.resolution}</div>
-                    <div>FPS: {activeCam.fps} // BITRATE: 12.4 Mbps</div>
-                    <div className="flex items-center gap-1.5">
+                    <div>FPS: {activeCam.fps}<span className="hidden sm:inline"> // BITRATE: 12.4 Mbps</span></div>
+                    <div className="flex items-center gap-1 sm:gap-1.5">
                       <span>SIGNAL:</span>
                       <span className="text-emerald-500 font-bold">{signalStrength}%</span>
-                      <Wifi className="w-3 h-3 text-emerald-500" />
+                      <Wifi className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-emerald-500" />
                     </div>
                   </div>
                 </div>
 
                 {/* HUD Bottom Info Bar */}
-                <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/85 via-black/40 to-transparent flex justify-between items-end z-30 pointer-events-none">
+                <div className="absolute inset-x-0 bottom-0 p-3 sm:p-6 bg-gradient-to-t from-black/85 via-black/40 to-transparent flex justify-between items-end z-30 pointer-events-none">
                   <div className="flex flex-col">
-                    <span className="text-white text-lg font-light tracking-wide font-serif mb-0.5">{activeCam.name}</span>
-                    <span className="text-[#C5A376]/90 text-[10px] tracking-widest uppercase">{activeCam.location}</span>
+                    <span className="text-white text-xs sm:text-lg font-light tracking-wide font-serif mb-0.5">{activeCam.name}</span>
+                    <span className="text-[#C5A376]/90 text-[8px] sm:text-[10px] tracking-widest uppercase">{activeCam.location}</span>
                   </div>
-                  <div className="flex flex-col items-end gap-1.5">
-                    <div className="text-[10px] font-semibold text-white tracking-widest font-mono">{timestamp}</div>
+                  <div className="flex flex-col items-end gap-1 sm:gap-1.5">
+                    <div className="text-[8px] sm:text-[10px] font-semibold text-white tracking-widest font-mono">{timestamp}</div>
                     <div className="flex gap-2">
-                      <span className="text-[8px] text-[#726E65] uppercase bg-white/5 border border-white/10 px-2 py-0.5 tracking-wider rounded">SECURE DEMO FEED</span>
+                      <span className="text-[7px] sm:text-[8px] text-[#726E65] uppercase bg-white/5 border border-white/10 px-1.5 py-0.5 tracking-wider rounded">SECURE DEMO FEED</span>
                     </div>
                   </div>
                 </div>

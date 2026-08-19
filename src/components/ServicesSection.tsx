@@ -81,7 +81,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = React.memo(({ onI
               <div
                 key={service.title}
                 style={{ transitionDelay: `${idx * 100}ms` }}
-                className={`bg-white/75 backdrop-blur-sm p-10 md:p-12 border border-[#E5E2DA]/40 hover:border-[#C5A376]/45 hover:bg-white transition-all duration-[400ms] ease-out flex flex-col justify-between group shadow-lg hover:shadow-[0_30px_60px_rgba(26,25,23,0.12)] hover:-translate-y-3.5 rounded-[20px] transform ${
+                className={`bg-white/75 backdrop-blur-sm p-6 sm:p-10 md:p-12 border border-[#E5E2DA]/40 hover:border-[#C5A376]/45 hover:bg-white transition-all duration-[400ms] ease-out flex flex-col justify-between group shadow-lg hover:shadow-[0_30px_60px_rgba(26,25,23,0.12)] hover:-translate-y-3.5 rounded-[20px] transform ${
                   mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                 }`}
               >

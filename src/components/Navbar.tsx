@@ -147,7 +147,7 @@ export const Navbar: React.FC<NavbarProps> = React.memo(({ onOpenInquire, onOpen
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-[#1A1917]/98 backdrop-blur-2xl text-white flex flex-col justify-between p-8 md:p-12 animate-fadeIn transition-all duration-500 ease-in-out">
+        <div className="fixed inset-0 z-50 bg-[#1A1917]/98 backdrop-blur-2xl text-white flex flex-col justify-between p-8 md:p-12 animate-fadeIn transition-all duration-500 ease-in-out overflow-y-auto max-h-screen">
           <div className="flex justify-between items-center pb-6 border-b border-white/10">
             <span className="font-serif text-2xl tracking-[0.25em] font-light">
               ESTATE<span className="text-[#C5A376] font-sans font-light">.</span>

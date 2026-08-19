@@ -58,14 +58,13 @@ export const ProcessSection: React.FC = React.memo(() => {
             Whether acquiring a coastal sanctuary or parting with a family legacy estate, our four-stage protocol guarantees seamless execution and complete confidentiality.
           </p>
 
-          {/* Mode Toggle Switch - Upgraded to Luxury Rounded Design */}
-          <div className="inline-flex bg-white/60 p-1.5 mt-10 border border-[#E5E2DA]/60 backdrop-blur-md rounded-full shadow-sm">
+          <div className="inline-flex bg-white/60 p-1 border border-[#E5E2DA]/60 backdrop-blur-md rounded-full shadow-sm">
             <button
               onClick={() => {
                 setMode('buying');
                 setActiveStep(0);
               }}
-              className={`px-7 py-3 text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-500 rounded-full ${
+              className={`px-3 sm:px-7 py-2.5 sm:py-3 text-[9px] sm:text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-500 rounded-full cursor-pointer ${
                 mode === 'buying'
                   ? 'bg-[#1A1917] text-white shadow-md'
                   : 'text-[#6B665E] hover:text-[#1A1917]'
@@ -78,7 +77,7 @@ export const ProcessSection: React.FC = React.memo(() => {
                 setMode('selling');
                 setActiveStep(0);
               }}
-              className={`px-7 py-3 text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-500 rounded-full ${
+              className={`px-3 sm:px-7 py-2.5 sm:py-3 text-[9px] sm:text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-500 rounded-full cursor-pointer ${
                 mode === 'selling'
                   ? 'bg-[#1A1917] text-white shadow-md'
                   : 'text-[#6B665E] hover:text-[#1A1917]'
@@ -101,7 +100,7 @@ export const ProcessSection: React.FC = React.memo(() => {
                 key={step.number}
                 onClick={() => setActiveStep(idx)}
                 style={{ transitionDelay: `${idx * 150}ms` }}
-                className={`cursor-pointer p-8 border transition-all duration-[400ms] ease-out flex flex-col justify-between group rounded-[20px] transform ${
+                className={`cursor-pointer p-6 sm:p-8 border transition-all duration-[400ms] ease-out flex flex-col justify-between group rounded-[20px] transform ${
                   activeStep === idx
                     ? 'bg-gradient-to-br from-[#1A1917] to-[#252321] text-white border-[#C5A376] shadow-[0_25px_50px_rgba(197,163,118,0.25)] -translate-y-3 scale-[1.02] border-t-2 border-t-[#C5A376]'
                     : 'bg-white/60 backdrop-blur-sm text-[#1A1917] border-[#E5E2DA]/50 hover:border-[#C5A376]/40 hover:bg-white hover:shadow-[0_20px_45px_rgba(26,25,23,0.06)] hover:-translate-y-2'

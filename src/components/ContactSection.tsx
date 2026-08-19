@@ -160,7 +160,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenInquire })
 
           {/* Right Side: Luxury Form & Client benefits badge */}
           <div className="lg:col-span-7 w-full">
-            <div className="bg-white/80 backdrop-blur-md p-8 md:p-12 border border-[#E5E2DA]/40 rounded-[20px] shadow-md hover:border-[#C5A376]/30 transition-all duration-[500ms]">
+            <div className="bg-white/80 backdrop-blur-md p-6 sm:p-8 md:p-12 border border-[#E5E2DA]/40 rounded-[20px] shadow-md hover:border-[#C5A376]/30 transition-all duration-[500ms]">
               {formSubmitted ? (
                 <div className="bg-[#C5A376]/10 border border-[#C5A376]/30 p-10 text-center my-12 animate-fadeIn rounded-2xl">
                   <CheckCircle className="w-12 h-12 text-[#C5A376] mx-auto mb-4" />
@@ -316,7 +316,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenInquire })
               <h4 className="text-[10px] font-semibold tracking-[0.25em] text-[#C5A376] uppercase mb-4">
                 Private Client Benefits
               </h4>
-              <div className="grid grid-cols-2 gap-4 text-xs text-[#6B665E] font-light">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-[#6B665E] font-light">
                 <div className="flex items-center gap-2">
                   <span className="text-[#C5A376] text-sm font-semibold">✓</span>
                   <span>Dedicated Global Advisor</span>
