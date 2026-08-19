@@ -208,26 +208,27 @@ export const SecuritySection: React.FC = React.memo(() => {
                     <span className="text-[7px] sm:text-[9px] font-bold text-white/50 bg-black/40 px-1.5 py-0.5 rounded tracking-widest self-start uppercase font-mono">{activeCam.camId}</span>
                   </div>
 
-                  {/* Feed Metadata */}
-                  <div className="flex flex-col items-end gap-1 sm:gap-1.5 font-mono text-[7.5px] sm:text-[9px] text-[#C5A376] bg-black/60 px-2 py-1.5 sm:px-3.5 sm:py-2 border border-[#C5A376]/10 backdrop-blur-md rounded">
+                  {/* Feed Metadata - Hidden on mobile viewports */}
+                  <div className="hidden sm:flex flex-col items-end gap-1.5 font-mono text-[9px] text-[#C5A376] bg-black/60 px-3.5 py-2 border border-[#C5A376]/10 backdrop-blur-md rounded">
                     <div>RESOL: {activeCam.resolution}</div>
-                    <div>FPS: {activeCam.fps}<span className="hidden sm:inline"> // BITRATE: 12.4 Mbps</span></div>
-                    <div className="flex items-center gap-1 sm:gap-1.5">
+                    <div>FPS: {activeCam.fps} // BITRATE: 12.4 Mbps</div>
+                    <div className="flex items-center gap-1.5">
                       <span>SIGNAL:</span>
                       <span className="text-emerald-500 font-bold">{signalStrength}%</span>
-                      <Wifi className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-emerald-500" />
+                      <Wifi className="w-3 h-3 text-emerald-500" />
                     </div>
                   </div>
                 </div>
 
                 {/* HUD Bottom Info Bar */}
-                <div className="absolute inset-x-0 bottom-0 p-3 sm:p-6 bg-gradient-to-t from-black/85 via-black/40 to-transparent flex justify-between items-end z-30 pointer-events-none">
+                <div className="absolute inset-x-0 bottom-0 p-3 sm:p-6 bg-gradient-to-t from-black/85 via-black/40 to-transparent flex justify-between items-end gap-4 z-30 pointer-events-none">
                   <div className="flex flex-col">
                     <span className="text-white text-xs sm:text-lg font-light tracking-wide font-serif mb-0.5">{activeCam.name}</span>
-                    <span className="text-[#C5A376]/90 text-[8px] sm:text-[10px] tracking-widest uppercase">{activeCam.location}</span>
+                    <span className="text-[#C5A376]/90 text-[8px] sm:text-[10px] tracking-wider sm:tracking-widest uppercase">{activeCam.location}</span>
                   </div>
                   <div className="flex flex-col items-end gap-1 sm:gap-1.5">
-                    <div className="text-[8px] sm:text-[10px] font-semibold text-white tracking-widest font-mono">{timestamp}</div>
+                    {/* Timestamp hidden on mobile overlay, moved below */}
+                    <div className="hidden sm:block text-[10px] font-semibold text-white tracking-widest font-mono">{timestamp}</div>
                     <div className="flex gap-2">
                       <span className="text-[7px] sm:text-[8px] text-[#726E65] uppercase bg-white/5 border border-white/10 px-1.5 py-0.5 tracking-wider rounded">SECURE DEMO FEED</span>
                     </div>
@@ -241,6 +242,22 @@ export const SecuritySection: React.FC = React.memo(() => {
                 <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-[#C5A376]/45 pointer-events-none z-20" />
               </div>
             </ScrollReveal>
+
+            {/* Mobile-only compact telemetry row (visible only on mobile, displaying RESOL, FPS, and SIG on one horizontal line) */}
+            <div className="flex sm:hidden items-center justify-between px-3 py-2 bg-[#121110]/95 border border-[#C5A376]/15 rounded-xl font-mono text-[7.5px] min-[360px]:text-[8.5px] text-[#C5A376]/90 shadow-md tracking-wider whitespace-nowrap">
+              <div className="flex-1 text-left">
+                RESOL: {activeCam.resolution}
+              </div>
+              <div className="text-white/20 px-1.5">|</div>
+              <div className="flex-1 text-center">
+                FPS: {activeCam.fps}
+              </div>
+              <div className="text-white/20 px-1.5">|</div>
+              <div className="flex-1 text-right flex items-center justify-end gap-1">
+                <span>SIG:</span>
+                <span className="text-emerald-500 font-semibold">{signalStrength}%</span>
+              </div>
+            </div>
 
             {/* Dashboard Control Panel bar */}
             <ScrollReveal delay={100}>
