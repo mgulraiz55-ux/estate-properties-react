@@ -184,8 +184,8 @@ export const SecuritySection: React.FC = React.memo(() => {
                 {/* Surveillance footage display with Ken Burns effect */}
                 <img
                   src={getOptimizedUnsplashUrl(activeCam.image, 800, 75)}
-                  srcSet={getUnsplashSrcSet(activeCam.image, [640, 800, 1024, 1200], 75)}
-                  sizes="(max-width: 1024px) 100vw, 850px"
+                  srcSet={getUnsplashSrcSet(activeCam.image, [480, 640, 800, 1024, 1200], 75)}
+                  sizes="(max-width: 640px) 480px, (max-width: 1024px) 100vw, 850px"
                   alt={`Security camera footage showing ${activeCam.name}`}
                   className="w-full h-full object-cover opacity-85 transition-transform duration-[8000ms] ease-out scale-105 group-hover:scale-100 filter contrast-[1.05] brightness-[0.80] grayscale-[20%]"
                   loading="lazy"
@@ -305,7 +305,7 @@ export const SecuritySection: React.FC = React.memo(() => {
                       {/* Mini Thumbnail */}
                       <div className="w-16 h-12 bg-black border border-white/10 overflow-hidden relative rounded-md flex-shrink-0">
                         <img
-                          src={getOptimizedUnsplashUrl(cam.image, 300)}
+                          src={getOptimizedUnsplashUrl(cam.image, 150, 75)}
                           alt={cam.name}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter brightness-[0.70] contrast-[1.05] grayscale-[20%]"
                           loading="lazy"

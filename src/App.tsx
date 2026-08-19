@@ -110,6 +110,9 @@ export default function App() {
 
   // Intersection Observer scroll reveal setup
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return;
+
     const observerOptions = {
       root: null,
       rootMargin: '0px',

@@ -44,9 +44,17 @@ export const Hero: React.FC<HeroProps> = React.memo(({ onExploreClick, onConsult
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [scale, setScale] = useState(1.08);
   const [mounted, setMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    const mobileQuery = window.matchMedia('(max-width: 767px)');
+    const checkMobile = () => setIsMobile(mobileQuery.matches);
+    checkMobile();
+    
+    if (mobileQuery.matches) {
+      return;
+    }
     
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -72,6 +80,7 @@ export const Hero: React.FC<HeroProps> = React.memo(({ onExploreClick, onConsult
   }, []);
 
   const handleMouseMove = (e: React.MouseEvent) => {
+    if (isMobile) return;
     const { clientWidth, clientHeight } = e.currentTarget;
     const x = (e.clientX / clientWidth - 0.5) * 12; // Max 12px shift
     const y = (e.clientY / clientHeight - 0.5) * 12;
@@ -88,7 +97,8 @@ export const Hero: React.FC<HeroProps> = React.memo(({ onExploreClick, onConsult
       <div className="absolute inset-0 select-none pointer-events-none z-0">
         <img
           src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80"
-          srcSet="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=640&q=80 640w,
+          srcSet="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=480&q=80 480w,
+                  https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=640&q=80 640w,
                   https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1024&q=80 1024w,
                   https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1440&q=80 1440w,
                   https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1920&q=80 1920w"
@@ -97,9 +107,10 @@ export const Hero: React.FC<HeroProps> = React.memo(({ onExploreClick, onConsult
           className="w-full h-full object-cover opacity-90 brightness-[1.10] contrast-[1.02]"
           fetchPriority="high"
           style={{
-            transform: `translate3d(${mouse.x}px, ${mouse.y + scrollY * 0.15}px, 0) scale(${scale})`,
-            transition: 'transform 350ms cubic-bezier(0.19, 1, 0.22, 1)',
-            willChange: 'transform',
+            transform: isMobile 
+              ? 'scale(1.08)' 
+              : `translate3d(${mouse.x}px, ${mouse.y + scrollY * 0.15}px, 0) scale(${scale})`,
+            willChange: isMobile ? 'auto' : 'transform'
           }}
         />
       </div>

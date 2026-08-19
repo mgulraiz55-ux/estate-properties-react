@@ -851,3 +851,35 @@ footer input:focus {
   background: rgba(197, 163, 118, 0.45);
 }
 
+/* Mobile-only performance overrides to prevent render blocks, TBT and LCP layout shifts */
+@media (max-width: 767px) {
+  #hero {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .reveal-section,
+  .reveal-section img,
+  .reveal-cards > div,
+  .reveal-cards > a,
+  .reveal-heading,
+  .reveal-subheading,
+  .reveal-content,
+  .reveal-buttons {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  #contact form > div,
+  #contact form select,
+  #contact form input,
+  #contact form textarea,
+  #contact form button {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

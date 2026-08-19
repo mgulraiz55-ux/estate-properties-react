@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Search, Menu, X } from 'lucide-react';
 
 interface NavbarProps {
@@ -11,7 +11,7 @@ export const Navbar: React.FC<NavbarProps> = React.memo(({ onOpenInquire, onOpen
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollYRef = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +20,7 @@ export const Navbar: React.FC<NavbarProps> = React.memo(({ onOpenInquire, onOpen
 
       // Slide navbar out when scrolling down, slide in when scrolling up
       if (currentScrollY > 200) {
-        if (currentScrollY > lastScrollY) {
+        if (currentScrollY > lastScrollYRef.current) {
           setVisible(false);
         } else {
           setVisible(true);
@@ -28,12 +28,12 @@ export const Navbar: React.FC<NavbarProps> = React.memo(({ onOpenInquire, onOpen
       } else {
         setVisible(true);
       }
-      setLastScrollY(currentScrollY);
+      lastScrollYRef.current = currentScrollY;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   const navLinks = [
     { name: 'Properties', href: '#properties' },

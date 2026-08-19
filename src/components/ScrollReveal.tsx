@@ -13,10 +13,15 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const mobileQuery = window.matchMedia('(max-width: 767px)');
+    const checkMobile = () => setIsMobile(mobileQuery.matches);
+    checkMobile();
+
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
+    if (prefersReducedMotion || mobileQuery.matches) {
       setIsVisible(true);
       return;
     }
@@ -47,13 +52,13 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
     <div
       ref={ref}
       style={{
-        transitionProperty: 'opacity, transform',
-        transitionDuration: `${duration}ms`,
-        transitionDelay: `${delay}ms`,
+        transitionProperty: isMobile ? 'none' : 'opacity, transform',
+        transitionDuration: isMobile ? '0ms' : `${duration}ms`,
+        transitionDelay: isMobile ? '0ms' : `${delay}ms`,
         transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'none' : 'translate3d(0, 32px, 0)',
-        willChange: 'opacity, transform'
+        opacity: isVisible || isMobile ? 1 : 0,
+        transform: isVisible || isMobile ? 'none' : 'translate3d(0, 32px, 0)',
+        willChange: isMobile ? 'auto' : 'opacity, transform'
       }}
     >
       {children}
