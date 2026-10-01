@@ -55,9 +55,9 @@ export const SecuritySection: React.FC = React.memo(() => {
     },
     {
       id: 'cam-perimeter',
-      name: 'Perimeter North',
+      name: 'Living Pavilion',
       camId: 'SEC-CAM-102',
-      location: 'Boundary Fence Line',
+      location: 'Interior Lounge View',
       image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c',
       resolution: '1080p HDR',
       fps: 30,
