@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://estate.com/sitemap.xml
+Sitemap: https://estate-properties-5f23d.web.app/sitemap.xml
