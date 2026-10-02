@@ -118,7 +118,7 @@ export const SecuritySection: React.FC = React.memo(() => {
     },
     {
       icon: Bell,
-      title: 'Fiduciary Support',
+      title: 'Emergency Response',
       description: 'Instant connection with private security teams and emergency dispatch.',
     },
   ];
